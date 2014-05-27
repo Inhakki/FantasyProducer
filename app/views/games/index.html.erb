@@ -1,0 +1,10 @@
+<h1>Available Games</h1>
+
+<ul>
+  <% @games.each do |game| %>
+    <li><%= game.groupname %>
+  <% end %>
+</ul>
+
+<p><%= link_to "create room", new_game_path %>
+

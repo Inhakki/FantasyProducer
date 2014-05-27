@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resources :games
-  resources :users, except: [:index]
+  resources :games do
+    resources :users
+  end
+
+  resources :users, except: [:index] do
+    resources :games
+  end
+
   resources :sessions, only: [:create]
 
   get '/signup' => 'users#new'
