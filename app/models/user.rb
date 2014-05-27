@@ -9,8 +9,12 @@ class User < ActiveRecord::Base
 
   validates :email,
     presence: true,
-    uniqueness: { case_sensitive: false }
+    uniqueness: { case_sensitive: false },
     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+
+
+  validates :password,
+    length: { minimum: 8 }
 
   has_secure_password
 
@@ -22,6 +26,14 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  private
 
+  def create_remember_token
+    self.remember_token
+  end
+
+  def normalize_fields
+    self.email.downcase!
+  end
 
 end
