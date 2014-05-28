@@ -2,7 +2,7 @@
 
   <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
     <p>Hello, <%= link_to current_user.name, current_user %></p>
-    <%= f.submit "Sign out", id:'signout' %>
+    <%= f.submit "Sign out", id:'sign out' %>
   <% end %>
 
 

@@ -1,5 +1,10 @@
 require 'spec_helper'
 
+describe 'User cannot manage games when not logged in.' do
+let!(:game) { Game.create( groupname: 'Camerons', max_members: 4, is_public: true)}
+
+end
+
 describe 'User can manage games' do
   let!(:game) { Game.create( groupname: 'Spielbergs', max_members: 3, is_public: true)}
 

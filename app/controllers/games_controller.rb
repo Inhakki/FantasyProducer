@@ -30,6 +30,10 @@ class GamesController < ApplicationController
     redirect_to games_path
   end
 
+  def join
+    @game_members = Game.artist
+  end
+
   private
 
   def load_game

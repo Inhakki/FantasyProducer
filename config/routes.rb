@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :users
   end
 
+  post ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
+
   resources :users, except: [:index] do
     resources :games
   end

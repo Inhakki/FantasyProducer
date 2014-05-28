@@ -8,6 +8,9 @@
       <%= form_for game, method: 'delete' do |f| %>
         <%= f.submit "destroy room", id: "destroy" %>
       <% end %>
+      <%= form_for game, method: 'join' do |f| %>
+        <%= f.submit "join room", id: "join" %>
+      <% end %>
     </li>
   <% end %>
 </ul>
