@@ -2,9 +2,14 @@
 
 <ul>
   <% @games.each do |game| %>
-    <li><%= game.groupname %>
+    <li>
+      <%= link_to "#{game.groupname}", game_path(game) %>
+      <%= link_to "edit room", edit_game_path(game) %>
+      <%= form_for game, method: 'delete' do |f| %>
+        <%= f.submit "destroy room", id: "destroy" %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
 <p><%= link_to "create room", new_game_path %>
-

@@ -1,0 +1,13 @@
+<% if signed_in? %>
+
+  <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
+    <p>Hello, <%= link_to current_user.name, current_user %></p>
+    <%= f.submit "Sign out", id:'signout' %>
+  <% end %>
+
+
+<% else %>
+
+  <%= link_to "Sign in", signin_path %> | <%= link_to "Sign up", signup_path %>
+
+<% end %>

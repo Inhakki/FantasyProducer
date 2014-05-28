@@ -1,0 +1,12 @@
+<%= form_for @game do |f| %>
+  <%= f.label :groupname %>
+  <%= f.text_field :groupname, id: 'Room Name' %>
+
+  <%= f.label :max_members %>
+  <%= f.select :max_members, options_for_select([['2', 2],['3',3],['4',4]]), {}, id: 'Number of Players' %>
+
+  <%= f.label :is_public %>
+  <%= f.check_box :is_public, id: 'Public?' %>
+
+  <%= f.submit 'Submit', id: 'submit' %>
+<% end %>
