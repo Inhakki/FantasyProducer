@@ -3,6 +3,7 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
+    @membership = Membership.new
   end
 
   def new
@@ -23,15 +24,13 @@ class GamesController < ApplicationController
   end
 
   def show
+    member_game = Game.find(params[:id])
+    @memberships = member_game.users
   end
 
   def destroy
     @game.destroy
     redirect_to games_path
-  end
-
-  def join
-    @game_members = Game.artist
   end
 
   private

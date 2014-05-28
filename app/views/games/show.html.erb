@@ -1,3 +1,7 @@
 <h1>The <%= @game.groupname %> Room</h1>
 
-
+<ul>
+    <% @memberships.each do |member| %>
+      <li><%= member.name %></li>
+    <% end %>
+</ul>

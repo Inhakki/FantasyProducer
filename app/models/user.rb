@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :games, through: :memberships
 
   before_create :create_remember_token

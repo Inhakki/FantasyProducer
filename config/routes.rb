@@ -7,13 +7,12 @@ Rails.application.routes.draw do
 
   resources :games do
     resources :users
+    resources :memberships
   end
-
-  post ':controller(/:action(/:id(.:format)))'
-  get ':controller(/:action(/:id(.:format)))'
 
   resources :users, except: [:index] do
     resources :games
+    resources :memberships
   end
 
   resources :sessions, only: [:create]

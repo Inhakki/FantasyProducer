@@ -6,13 +6,13 @@
       <%= link_to "#{game.groupname}", game_path(game) %>
       <%= link_to "edit room", edit_game_path(game) %>
       <%= form_for game, method: 'delete' do |f| %>
-        <%= f.submit "destroy room", id: "destroy" %>
+        <%= f.submit "destroy room" %>
       <% end %>
-      <%= form_for game, method: 'join' do |f| %>
-        <%= f.submit "join room", id: "join" %>
+      <%= form_for([game, @membership]) do |f| %>
+        <%= f.submit "join room" %>
       <% end %>
     </li>
   <% end %>
 </ul>
 
-<p><%= link_to "create room", new_game_path %>
+<%= link_to "create room", new_game_path %>
