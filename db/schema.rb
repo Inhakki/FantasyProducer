@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140527140159) do
     t.boolean "is_public",   default: true
   end
 
+  add_index "games", ["groupname"], name: "index_games_on_groupname", unique: true, using: :btree
+
   create_table "memberships", force: true do |t|
     t.integer "game_id"
     t.integer "user_id"
