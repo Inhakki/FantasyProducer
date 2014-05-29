@@ -8,12 +8,18 @@ Rails.application.routes.draw do
   resources :games do
     resources :users
     resources :memberships
+    resources :movies
   end
 
   resources :users, except: [:index] do
     resources :games
     resources :memberships
   end
+
+  resources :movies, except: [:show] do
+    resources :games
+  end
+
 
   resources :sessions, only: [:create]
 

@@ -9,8 +9,8 @@
         <%= form_for game, method: 'delete' do |f| %>
           <%= f.submit "destroy room" %>
         <% end %>
-        <%= form_for([game, @membership]) do |f| %>
-          <%= f.submit "join room" %>
+        <% if Membership.where(game_id: game.id, user_id: current_user.id).empty? %>
+          <%= button_to "join room", game_memberships_path(game), action: 'post' %>
         <% end %>
       <% end %>
     </li>

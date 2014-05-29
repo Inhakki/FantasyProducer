@@ -3,7 +3,6 @@ class GamesController < ApplicationController
 
   def index
     @games = Game.all
-    @membership = Membership.new
   end
 
   def new
@@ -25,7 +24,7 @@ class GamesController < ApplicationController
 
   def show
     member_game = Game.find(params[:id])
-    @memberships = member_game.users
+    @users_in_game = member_game.users
   end
 
   def destroy

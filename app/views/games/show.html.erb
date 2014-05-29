@@ -1,7 +1,8 @@
 <h1>The <%= @game.groupname %> Room</h1>
 
+<p id="error"><%= flash[:error] %></p>
 <ul>
-    <% @memberships.each do |member| %>
+    <% @users_in_game.each do |member| %>
       <li><%= link_to "#{member.name}", user_path(member) %></li>
     <% end %>
 </ul>
@@ -9,3 +10,7 @@
 <ul>
 
 </ul>
+
+<% if !Membership.where(game_id: params[:id], user_id: current_user.id).empty? %>
+  <%= button_to "leave room", game_membership_path(params[:id], current_user.id), method: 'delete' %>
+<% end %>

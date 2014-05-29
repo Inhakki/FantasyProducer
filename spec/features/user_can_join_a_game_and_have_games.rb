@@ -20,14 +20,38 @@ describe 'User can join a game' do
   end
 
   it 'cannot have more than the maximum members' do
+    overload_room
+    user3_count = page.body.scan(user3.name).count
+    expect(user3_count).to_not have_content 2
+  end
+
+  it 'shows error when game is full' do
+    overload_room
+    expect(page).to have_content 'The game is full.'
+  end
+
+  it 'allows you to leave the room' do
+    login(user)
+    user_joins
+    click_button 'leave room'
+    visit games_path
+    expect(page).to have_button 'join room'
+  end
+
+  it 'prevents you from leaving if you are not in the room' do
+    login(user)
+    user_joins
+    click_button 'leave room'
+    expect(page).to_not have_button 'leave room'
+  end
+
+  def overload_room
     login(user)
     user_joins
     login(user2)
     user_joins
     login(user3)
     user_joins
-    user3_count = page.body.scan(user3.name).count
-    expect(user3_count).to_not eq user3.name
   end
 
   def user_joins
