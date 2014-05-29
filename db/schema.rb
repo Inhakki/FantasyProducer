@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527140159) do
+ActiveRecord::Schema.define(version: 20140529024440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "draft_picks", force: true do |t|
+    t.integer "game_id"
+    t.integer "movie_id"
+  end
 
   create_table "games", force: true do |t|
     t.string  "groupname"
@@ -27,6 +32,14 @@ ActiveRecord::Schema.define(version: 20140527140159) do
   create_table "memberships", force: true do |t|
     t.integer "game_id"
     t.integer "user_id"
+  end
+
+  create_table "movies", force: true do |t|
+    t.string  "title"
+    t.integer "year"
+    t.float   "budget"
+    t.float   "gross"
+    t.text    "img_url"
   end
 
   create_table "users", force: true do |t|

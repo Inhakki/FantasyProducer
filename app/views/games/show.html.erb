@@ -2,6 +2,10 @@
 
 <ul>
     <% @memberships.each do |member| %>
-      <li><%= member.name %></li>
+      <li><%= link_to "#{member.name}", user_path(member) %></li>
     <% end %>
+</ul>
+
+<ul>
+
 </ul>

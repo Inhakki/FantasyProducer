@@ -8,7 +8,12 @@ describe 'User can join a game' do
     login(user)
     visit games_path
     click_button('join')
-    expect(page).to have_content '#{user.name}'
+    expect(page).to have_content user.name
+  end
+
+  it 'cannot join if the user is not signed up.' do
+    visit games_path
+    expect(page).to_not have_content 'join'
   end
 
   def login(user)

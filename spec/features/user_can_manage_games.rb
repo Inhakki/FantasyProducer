@@ -1,11 +1,7 @@
 require 'spec_helper'
 
-describe 'User cannot manage games when not logged in.' do
-let!(:game) { Game.create( groupname: 'Camerons', max_members: 4, is_public: true)}
-
-end
-
 describe 'User can manage games' do
+  let(:user) { FactoryGirl.create(:user) }
   let!(:game) { Game.create( groupname: 'Spielbergs', max_members: 3, is_public: true)}
 
   it 'can display the games available to join page' do
@@ -14,6 +10,7 @@ describe 'User can manage games' do
   end
 
   it 'can create a game' do
+    login(user)
     visit games_path
     click_link('create room')
     fill_variables
@@ -27,6 +24,7 @@ describe 'User can manage games' do
   end
 
   it 'can update the attributes of the room.' do
+    login(user)
     visit games_path
     click_link('edit room')
     fill_variables
@@ -34,6 +32,7 @@ describe 'User can manage games' do
   end
 
   it 'can destroy games with no users' do
+    login(user)
     visit games_path
     click_button('destroy')
     expect(page).to_not have_content 'Spielbergs'
@@ -46,6 +45,13 @@ describe 'User can manage games' do
     select('4', from: 'Number of Players')
     check('Public?')
     click_button('submit')
+  end
+
+  def login(user)
+    visit '/signin'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
   end
 
 end

@@ -1,2 +1,14 @@
 <h1><%= @user.name %>'s Producer Credentials</h1>
 
+<p>Games Joined</p>
+
+<ul>
+    <% @user_games.each do |game| %>
+      <li><%= link_to "#{game.groupname}", game_path(game)  %></li>
+    <% end %>
+</ul>
+
+<p>Games Won</p>
+<p>Games Lost</p>
+
+<p>Best Score</p>
