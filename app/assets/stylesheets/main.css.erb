@@ -1,12 +1,13 @@
 body {
-  background: url('pattern.png');
+  background: url(<%= asset_path('pattern.png')%>);
   margin: 0;
 }
 
 body .navbar {
-  background: url('film_strip.png') repeat-x;
+  background: url(<%= asset_path('film_strip.png') %>) repeat-x;
   background-color: rgba(70,70,70,.3);
   background-size: 120px;
+  color: #00FFFF;
   padding: 10px;
 }
 
@@ -53,7 +54,7 @@ body .wrapper.withBackground{
 }
 
 body .wrapper.withBackground::before{
-  background: url("scripts_paper.png");
+  background: url(<%= asset_path("scripts_paper.png") %>);
   background-size: 800px;
   content: " ";
   margin-left: -15px;
@@ -70,4 +71,8 @@ body .wrapper p {
 
 body .wrapper ul {
   padding-left: 80px;
+}
+
+body .wrapper ul li{
+  display: inline;
 }
