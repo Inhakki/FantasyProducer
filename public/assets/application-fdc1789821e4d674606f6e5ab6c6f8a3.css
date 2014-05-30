@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background: url('pattern.png');
+}
+
+body .navbar {
+  background: url('film_strip.png') repeat-x;
+  background-color: rgba(70,70,70,.3);
+  background-size: 120px;
+  padding: 10px;
+}
+
+
+a:link{
+  color: #7C9799;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #7C8199;
+}
+
+body .navbar li {
+  display: inline;
+  font-size: 25px;
+}
+
+body .navbar li:last-child {
+  float: right;
+
+}
+
+body h1 {
+  font-family: 'Raleway', Helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+body .wrapper {
+  display: block;
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0 auto;
+  max-width: 770px;
+  padding: 30px;
+}
+
+body .wrapper.withBackground{
+  position: relative;
+  background-color: transparent;
+}
+
+body .wrapper.withBackground::before{
+  content: " ";
+  position: absolute;
+  width: 790px;
+  height: 1000px;
+  z-index: -1;
+  background: url("scripts_paper.png");
+  background-size: 790px;
+}
+
+body .wrapper ul {
+  padding-left: 40px
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
