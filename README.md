@@ -2,6 +2,11 @@
 
 ### GA WDI DC May 2014, Project 1
 
+**Fantasy Producer** can be accessed here: http://fantasyproducer.herokuapp.com/games. Fantasy producer currently has no dependencies.
+
+[ERD Diagram](http://imgur.com/7fbTclx)
+[FantasyProducer Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1086730)
+
 ### Overview
 
 **Fantasy Producer** is an app that allows you to pretend you are a producer and draft movies like real producers do in Hollywood. Fantasy Producer was developed as a sample Rails project for the April 2014 Web Development Immersive course at General Assembly. It was developed over a 4 day sprint to model the agile software development process.
