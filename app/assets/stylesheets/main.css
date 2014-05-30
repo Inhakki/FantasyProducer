@@ -13,7 +13,7 @@ body .navbar {
 
 a:link{
   color: #7C9799;
-  font-family: ;
+  font-family: Helvetica, sans-serif;
   text-decoration: none;
 }
 
@@ -42,7 +42,7 @@ body h1 {
 
 body .wrapper {
   display: block;
-  font-family: "Playfair Display", sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   margin: 0 auto;
   max-width: 770px;
   padding: 30px;
