@@ -3,7 +3,7 @@
 <p id="error"><%= flash[:error] %></p>
 <ul>
     <% @users_in_game.each do |member| %>
-      <li><%= link_to "#{member.name}", user_path(member) %></li>
+      <li class="first"><%= link_to "#{member.name}", user_path(member) %></li>
     <% end %>
 </ul>
 
@@ -11,6 +11,8 @@
 
 </ul>
 
-<% if !Membership.where(game_id: params[:id], user_id: current_user.id).empty? %>
+<% if signed_in? && !Membership.where(game_id: params[:id], user_id: current_user.id).empty? %>
   <%= button_to "leave room", game_membership_path(params[:id], current_user.id), method: 'delete' %>
+
+  <%= link_to "Ready?", edit_game_membership_path(params[:id], current_user.id), method: 'post' %>
 <% end %>

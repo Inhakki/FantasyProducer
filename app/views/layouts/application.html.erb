@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
   <title>Fantasy Producer</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= link_to "Games", games_path %>
-  <%= render 'common/signout' %>
-  <%= yield %>
+  <div class="navbar">
+    <ul>
+      <%= render 'common/signout' %>
+      <%= render 'common/navbar' %>
+    </ul>
+  </div>
+  <div class="wrapper withBackground">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

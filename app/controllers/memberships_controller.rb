@@ -16,6 +16,12 @@ class MembershipsController < ApplicationController
     redirect_to @game
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def find_game
