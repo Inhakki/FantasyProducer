@@ -1,5 +1,5 @@
 body {
-  background: url('<%= assets_path(pattern.png) %>');
+  background: url('pattern.png');
   margin: 0;
 }
 
