@@ -49,18 +49,18 @@ body .wrapper {
 }
 
 body .wrapper.withBackground{
-  position: relative;
   background-color: transparent;
+  position: relative;
 }
 
 body .wrapper.withBackground::before{
-  content: " ";
-  position: absolute;
-  width: 790px;
-  height: 1000px;
-  z-index: -1;
   background: url("scripts_paper.png");
   background-size: 790px;
+  content: " ";
+  height: 1000px;
+  position: absolute;
+  width: 790px;
+  z-index: -1;
 }
 
 body .wrapper ul {
