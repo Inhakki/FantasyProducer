@@ -28,7 +28,6 @@ body .navbar li {
 
 body .navbar li:last-child {
   float: right;
-
 }
 
 body h1 {
@@ -55,14 +54,10 @@ body .wrapper.withBackground{
 
 body .wrapper.withBackground::before{
   background: url("scripts_paper.png");
-  background-size: 790px;
+  background-size: 800px;
   content: " ";
   position: absolute;
   height: 1000px;
-  width: 790px;
+  width: 800px;
   z-index: -1;
-}
-
-body .wrapper ul {
-  padding-left: 40px
 }
