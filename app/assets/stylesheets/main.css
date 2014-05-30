@@ -48,16 +48,26 @@ body .wrapper {
 }
 
 body .wrapper.withBackground{
-  position: relative;
   background-color: transparent;
+  position: relative;
 }
 
 body .wrapper.withBackground::before{
   background: url("scripts_paper.png");
   background-size: 800px;
   content: " ";
+  margin-left: -15px;
   position: absolute;
-  height: 1000px;
+  height: 700px;
   width: 800px;
   z-index: -1;
+
+}
+
+body .wrapper p {
+  padding-left: 70px;
+}
+
+body .wrapper ul {
+  padding-left: 80px;
 }

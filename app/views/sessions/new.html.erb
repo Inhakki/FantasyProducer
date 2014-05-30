@@ -1,11 +1,11 @@
 <h1>Sign in</h1>
 
 <%= form_for :session, url: sessions_path do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<p><%= f.label :email %>
+  <%= f.text_field :email %></p>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <p><%= f.label :password %>
+  <%= f.password_field :password %></p>
 
-  <%= f.submit 'Sign in', id: 'sign in' %>
+  <p><%= f.submit 'Sign in', id: 'sign in' %></p>
 <% end %>

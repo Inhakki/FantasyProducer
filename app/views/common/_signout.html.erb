@@ -1,14 +1,15 @@
 <% if signed_in? %>
 
-  <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
-    <li>Hello, <%= link_to current_user.name, current_user %></li>
-    <li><%= f.submit "Sign out", id:'sign out' %></li>
-  <% end %>
+  <li><%= form_for :session, url: signout_path, method: 'delete' do |f| %>
+    Hello, <%= link_to current_user.name, current_user %>
+    <%= f.submit "Sign out", id:'sign out' %>
+  <% end %></li>
 
 
 <% else %>
 
   <li><%= link_to "Sign in", signin_path %></li>
+  <li> | </li>
   <li><%= link_to "Sign up", signup_path %></li>
 
 <% end %>
