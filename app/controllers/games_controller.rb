@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
-  before_action :load_game, only: [:show, :edit, :update, :destroy]
+  before_action :load_game, only: [ :show, :edit, :update, :destroy]
+  before_action :load_member, only: [ :index, :show ]
 
   def index
     @games = Game.all
@@ -23,8 +24,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    member_game = Game.find(params[:id])
-    @users_in_game = member_game.users
+    @users_in_game = @game.users
   end
 
   def destroy
@@ -33,6 +33,10 @@ class GamesController < ApplicationController
   end
 
   private
+
+  def load_member
+    return @current_member = Membership.where(game_id: params[:id], user_id: current_user.id)
+  end
 
   def load_game
     return @game = Game.find_by(id: params[:id])
