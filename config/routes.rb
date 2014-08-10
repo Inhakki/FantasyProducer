@@ -6,14 +6,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :games do
-    resources :users
-    resources :memberships
-    resources :movies
+    resources :users, :memberships, :movies
   end
 
   resources :users, except: [:index] do
-    resources :games
-    resources :memberships
+    resources :games, :memberships
   end
 
   resources :movies, except: [:show] do
